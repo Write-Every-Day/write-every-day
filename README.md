@@ -40,7 +40,7 @@
 | SeungJin Choi  |  ✔️    |  ✔️    |       |  ✔️    |       |       |       |       |
 | cocobisc       |  ✔️    |  ✔️    |       |       |  ✔️    |       |       |       |
 | HayDen         |  ✔️    |  ✔️    |       |       |       |       |       |       |
-| Jihye Choi     |  ✔️    |  ✔️    |  ✔️    |       |       |       |       |       |
+| Jihye Choi     |  ✔️    |  ✔️    |  ✔️    |       |  ✔️    |       |       |       |
 | qjatn1236      |  ✔️    |       |       |       |       |       |       |       |
 
 <br>
