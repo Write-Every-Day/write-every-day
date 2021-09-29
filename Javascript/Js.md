@@ -1,32 +1,58 @@
-# 변수란 뭘가?
-- 스크랍트는 자신의 작업을 시작하는 동안 어떠한 정보들을 임시로
-저장해야 할 필요가 있다.
-이때 스크립트가 데이터를 저장해둘 수 있는 어떤 것을 '변수'라고 한다.
+# 구문 
+##### 스크립트는 컴퓨터가 단계별로 수행할 수 있는 일련의 명령이다
+##### 이중 각각의 명령이나 단계를 구문 statement 이라고 한다.
+##### 구문은 세미콜론 ; 으로 끝나야 한다.
 
-### 변수 선언하기
-
-- 변수를 선언하기 위해서는 먼저 변수를 사용하고 싶다고 알려야 한다.
-  즉, 변수를 생성하고 이름을 부여해야 한다.
-  이 과정을 변수를 '선언'한다고 표현한다.
-  
-  ```js
-    var total;
-  ```
-  var (현재에는 var 선언방식을 잘 사용하지 않는다.)
-
-### var 변수에 값 대입하기
-
-- 일단 변수를 만들었으면 어떤 정보를 저장하고 싶은지를 지정해야 한다.
-  이를 변수에 값을 '대입'한다고 표현한다.
-  ```js
-    total = 14;
-  ```
-
-### getRandom 함수로 랜덤값 설정하고
-- floor 사용해서 소수점이하는 버림
+##### 아래의 코드의 실행 결과를 보기전에 다음의 내용을 기억해두자.
 
 ```js
-export default function random(){
-    return Math.floor(Math.random() * 10)
-}
-```
+    var today = new Date();
+    var hourNow = today.getHours();
+    var greeting; 
+ ```
+```js
+    if (hourNow > 18) {
+        greeting = ‘Good evening’;
+    }	else if (hourNow > 12){
+        greeting = ‘Good afternoon’;;
+    }	else if (hourNow > 0){
+        greeting = ‘Good morning’;
+    }	else{
+        greeting = ‘Welcome’;
+    }
+        document.write(greeting);
+ ```
+
+# 주석
+##### 작성한 코드가 어떤 일을 하는지 설명하기 위해 주석 (comments)를 작성해야 한다.
+##### 잘 작성된 코드를 읽고 이해하는 데 도움이 되므로 다른 사람이 나의 코드를 더욱 쉽게 읽을 수 있다.
+
+```js
+    한줄 주석은 두개의 슬래시 // 다음에 작성한다.
+    한 줄 주석은 주로 코드에 짧은 설명을 덧붙일 때 사용한다.
+
+
+    var today = new Date(); //새로운 날짜 객체를 생성한다
+    var hourNow = today.getHours(); //현재 시(Hour)를 구한다
+    var greeting; 
+ ```
+
+```js
+    // 현재 시간에 따라 적당한 인사말을 출력한다.
+
+    여러 줄로 주석 처리를 하려면 
+    /* 문자로 시작해서
+    if (hourNow > 18) {
+        greeting = ‘Good evening’;
+    }	else if (hourNow > 12){
+        greeting = ‘Good afternoon’;;
+    }	else if (hourNow > 0){
+        greeting = ‘Good morning’;
+    }	else{
+        greeting = ‘Welcome’;
+    }
+        document.write(greeting);
+    */ 문자로 끝나는 주석을 사용한다.
+    이 두 문자 사이에 존재하는 문자들은 그것이 무엇이든 자바스크립트 해석기가
+    처리하지 않는다.
+ ```
