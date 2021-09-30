@@ -85,7 +85,7 @@
     이 코드는 id 특성 값을 이용하여 두 개의 요소를 선택하고
     그 콘텐츠를 변수에 저장된 값으로 변경한다.
 
-    중요한 점은 문자열은 반드시 따옴표로 둘러싸야 한다는 것이다.
+    중요한 점은 문자열은 반드시 따옴표로 둘러싸야 한다는 것이다
 
     var elName = document.getElementById('name');
     elName.textContent = username;
