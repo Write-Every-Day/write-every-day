@@ -40,7 +40,6 @@
 | Doa Choi       |  ✔️    |       |  ✔️    |       |  ✔️    |       |  ✔️    |       |
 | SeungJin Choi  |  ✔️    |  ✔️    |       |  ✔️    |       |  ✔️    |       |  ✔️    |
 | cocobisc       |  ✔️    |  ✔️    |       |       |  ✔️    |       |  ✔️    |       |
-| HayDen         |  ✔️    |  ✔️    |       |       |       |       |       |       |
 | Jihye Choi     |  ✔️    |  ✔️    |  ✔️    |       |  ✔️    |  ✔️    |       |  ✔️    |
 | qjatn1236      |  ✔️    |       |       |       |  ✔️    |       |  ✔️    |  ✔️    |
 
@@ -54,7 +53,7 @@
 | SeungJin Choi  |       |       |       |       |       |       |       |       |
 | cocobisc       |       |       |       |       |       |       |       |       |
 | HayDen         |       |       |       |       |       |       |       |       |
-| Jihye Choi     |       |       |       |       |       |       |       |       |
+| Jihye Choi     |       |  ✔️    |       |       |       |       |       |       |
 | qjatn1236      |       |       |       |       |       |       |       |       |
 
 ### ✏️ 활동 가이드
