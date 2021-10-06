@@ -5,60 +5,60 @@
 핵심은 클라이언트에 정보가 노출되지 않는다는 것, 서버 내에 세션 키를 이용해 값을 참조할 객체를 하나 생성한다.
 아래는 그 예시인데, 사용자 이름과 만료시간을 할당했다.
 ```jsx
-//createServer 콜백 함수
-if(request.url === "/login"){
-	const userSession = {}; //사용자 정보
-	const uuid = Date.now(); //사용자 식별을 위해 중복되지 않아야한다. 
-	const expireTime = new Date(); //사용자 정보
-	expireTime.setMinutes(expireTime.getMinutes() + 5); //만료시간 설정
-	
-	userSession[uuid] = {
-		name : "admin",
-		expires : erpireTime
+	//createServer 콜백 함수
+	if(request.url === "/login"){
+		const userSession = {}; //사용자 정보
+		const uuid = Date.now(); //사용자 식별을 위해 중복되지 않아야한다. 
+		const expireTime = new Date(); //사용자 정보
+		expireTime.setMinutes(expireTime.getMinutes() + 5); //만료시간 설정
+		
+		userSession[uuid] = {
+			name : "admin",
+			expires : erpireTime
+		}
 	}
-}
 ```
 
 이제 세션을 성공적으로 저장했으면 해당 사용자가 재방문시 사용자 상태를 관리하기 위해 세션을 담아 전송해야한다.  
 전송하는 방법은 `Set-Cookie`에 session 키값에 넣어주면 된다.  (쿠키를 사용하는 방식과 동일하지만, 각각의 key-value에 데이터를 전송하는 것이 아닌 식별을 위한 key만 전송하는 것이 차이점이다.)
 
 ```jsx
-http.createServer(async (request, response) => {
-	try{
-		const method = request.method;
-		const url = request.url;
-	
-		//로그인 후 메인화면 요청
-		if(method === "POST" && url === "/login"){
-				let body = "";
-        let userId = request.body.id.length ? request.body.id : "anonymous";
-        request.on("data", (data) => { body += data; });
-				/* session 처리 */
-				const userSession = {}; //사용자 정보
-				const uuid = Date.now(); //사용자 식별을 위해 중복되지 않아야한다. 
-				const expireTime = new Date(); //사용자 정보
-				expireTime.setMinutes(expireTime.getMinutes() + 5); //만료시간 설정
+	http.createServer(async (request, response) => {
+		try{
+			const method = request.method;
+			const url = request.url;
+		
+			//로그인 후 메인화면 요청
+			if(method === "POST" && url === "/login"){
+					let body = "";
+			let userId = request.body.id.length ? request.body.id : "anonymous";
+			request.on("data", (data) => { body += data; });
+					/* session 처리 */
+					const userSession = {}; //사용자 정보
+					const uuid = Date.now(); //사용자 식별을 위해 중복되지 않아야한다. 
+					const expireTime = new Date(); //사용자 정보
+					expireTime.setMinutes(expireTime.getMinutes() + 5); //만료시간 설정
 
-				userSession[uuid] = {
-					name : userId,
-					expires : erpireTime
-				}
+					userSession[uuid] = {
+						name : userId,
+						expires : erpireTime
+					}
 
-				response.writeHead(200, {
-           Location : "/",
-           "Set-Cookie": `session=${uuid} Expires=${expireTime} HttpOnly;`,
-				});
+					response.writeHead(200, {
+			Location : "/",
+			"Set-Cookie": `session=${uuid} Expires=${expireTime} HttpOnly;`,
+					});
+			}
+		} catch(e){
+			console.error("error!", e);
 		}
-	} catch(e){
-		console.error("error!", e);
-	}
-}).listen(8088, () => {
-    console.log("server start..");
-});
-response.writeHead(200, {
-		"content-Type": "Application/json; charset=utf-8",
-		"Set-Cookie": `session=${uuid} Expires=${expireTime.toGMTString()}`, 
-});
+	}).listen(8088, () => {
+		console.log("server start..");
+	});
+	response.writeHead(200, {
+			"content-Type": "Application/json; charset=utf-8",
+			"Set-Cookie": `session=${uuid} Expires=${expireTime.toGMTString()}`, 
+	});
 ```
 
 ### 개선할 점
