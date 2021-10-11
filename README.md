@@ -61,7 +61,7 @@
 | SeungJin Choi  |       |  휴일  |       |       |       |       |       |       |
 | cocobisc       |       |  휴일  |       |       |       |       |       |       |
 | Jihye Choi     |  ✔️    |  휴일  |       |       |       |       |       |       |
-| qjatn1236      |       |  휴일  |       |       |       |       |       |       |
+| qjatn1236      |       |  휴일  |  ✔️    |       |       |       |       |       |
 
 ### ✏️ 활동 가이드
 [학습 자료 업로드 방법](https://github.com/Write-Every-Day/write-every-day/blob/main/%EA%B0%80%EC%9D%B4%EB%93%9C.md)
