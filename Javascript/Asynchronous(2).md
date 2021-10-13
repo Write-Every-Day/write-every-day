@@ -5,6 +5,7 @@
 
 ## Synchronous Javascript
 자바는 싱글 스레드이며 한번에 한 작업만 하나의 main thread에서 처리 될 수 있다. 각 작업이 처리되는 동안에는 렌더링이 일시 중지 됨
+==**Javascript is synchrous => Execute the code block in order after hoisting**==
 
 ## Asynchronous Javascript
 앞서 말한 동기 프로그래밍때문에 웹 API 기능은 현재 비동기 코드를 사용하여 실행되고 있다.
@@ -12,7 +13,12 @@
 Javascript에서 볼 수 있는 비동기 스타일은 두 가지의 유형이 있다. ==callbacks== ==promise-style==
 
 ## Async callbacks
-Async callbacks은 백그라운드에서 코드 실행을 시작할 함수를 호출할 때 인수로 지정된 함수이다. 백그라운드 코드 실행이 끝나면 callback 함수를 호출하여 작업이 완료 됐음을 알리거나, 다음 작업을 실행할 수 있게 함. 단점은 약간 구식인 방식이나 여전히 다른곳에서 사용되고 있다.
+Async callbacks은 백그라운드에서 코드 실행을 시작할 함수를 호출할 때 인수로 지정된 함수이다. (Async callbacks are functions that are specified as arguments when calling a function which will start executing code in the background.)
+==⇒ 이말이 너무 이해가 안된다.==
+
+백그라운드 코드 실행이 끝나면 callback 함수를 호출하여 작업이 완료 됐음을 알리거나, 다음 작업을 실행할 수 있게 함. 단점은 약간 구식인 방식이나 여전히 다른곳에서 사용되고 있다.
+
+참고로 동기적 callback 함수도 있다.
 
 예시)
 ```js
